@@ -72,9 +72,9 @@ public class MovimentacaoDAO {
 
             stmtMov.executeUpdate();
 
-            if (movimentacao.getTipo().equals("entrada")) {
+            if (movimentacao.getTipo().equalsIgnoreCase("entrada")) {
                 atualizarEstoque(movimentacao.getProdutoId(), movimentacao.getQuantidade());
-            } else if (movimentacao.getTipo().equals("saida")) {
+            } else if (movimentacao.getTipo().equalsIgnoreCase("saida")) {
                 atualizarEstoque(movimentacao.getProdutoId(), -movimentacao.getQuantidade());
             }
             System.out.println("Movimentação registrada com sucesso.");

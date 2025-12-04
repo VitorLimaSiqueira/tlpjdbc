@@ -13,6 +13,7 @@ public class ProdutoController {
     }
 
     public void cadastrarProduto(Produto produto) {
+        System.out.println(produto);
         if (produto.getnome() == null || produto.getnome().isEmpty()) {
             System.out.println("Nome não pode ser vazio.");
             return;
